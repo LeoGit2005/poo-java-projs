@@ -1,6 +1,8 @@
 package exercicio_biblioteca;
 
-public class Principal {
+import java.util.ArrayList;
+
+public class Principal2 {
 	
 	public static void main(String[] args) {
 		
@@ -14,10 +16,14 @@ public class Principal {
 		l2.setAutor("Jaaj");
 		l2.setAnoPublicacao(1987);
 		
-		Biblioteca b1 = new Biblioteca();
+		ArrayList<Livro> ls = new ArrayList<Livro>();
+		ls.add(l1);
+		ls.add(l2);
+		
+		Biblioteca b1 = new Biblioteca(ls);
 		b1.setNome("Biib shoosh");
-		b1.getLivro().add(l1);
-		b1.getLivro().add(l2);
+		
+		System.out.println(b1.getNome());
 		
 		for (Livro livro : b1.getLivro()) {
 			System.out.println(livro.getTitulo() + 
@@ -30,3 +36,6 @@ public class Principal {
 	}
 
 }
+
+
+
